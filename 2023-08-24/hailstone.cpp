@@ -3,7 +3,7 @@
 using namespace std;
 
 int main( int argc, char* argv[]) {
-    unsigned int n = 5;
+    unsigned int n = 7;
 
     while( n != 1 ) {
         cout << n << " ";
