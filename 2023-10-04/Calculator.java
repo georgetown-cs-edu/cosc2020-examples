@@ -1,5 +1,3 @@
-package mycalculator;
-
 import java.util.Vector;
 
 public class Calculator {
@@ -34,6 +32,15 @@ public class Calculator {
         push(a - b);
     }
 
+
+    public static void main( String args[] ) {
+        Calculator calc = new Calculator();
+        calc.push(1);
+        calc.push(2);
+        calc.add();
+        Integer result = calc.pop();
+        System.out.println(result);
+    }
 
     
 }

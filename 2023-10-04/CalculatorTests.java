@@ -1,15 +1,11 @@
-package mycalculator;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.*;
 
 public class CalculatorTests {
     
     private Calculator calc;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         calc = new Calculator();
     }
@@ -21,6 +17,17 @@ public class CalculatorTests {
         calc.add();
         Integer result = calc.pop();
         assertEquals(Integer.valueOf(3), result);
+    }
+
+    @RepeatedTest(1000)
+    public void testLotsOfAdds() {
+        int a = (int) (Math.random() * 100);
+        int b = (int) (Math.random() * 100);
+        calc.push(a);
+        calc.push(b);
+        calc.add();
+        Integer result = calc.pop();
+        assertEquals(Integer.valueOf(a + b), result);
     }
 
     @Test
