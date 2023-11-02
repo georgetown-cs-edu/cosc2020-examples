@@ -6,42 +6,42 @@ import java.net.Socket;
 
 public class CapitalizeClient {
   public static void main(String[] args) {
-    
+
     String hostname = "localhost";
     int port = 40000;
     Socket server = null;
 
     try {
       server = new Socket(hostname, port);
-      
-      BufferedReader in = new BufferedReader( new InputStreamReader(
-                                              server.getInputStream() 
-                                                                   )
-                                            );
-      PrintWriter out = new PrintWriter( server.getOutputStream(), true );
-      
-      BufferedReader userIn = new BufferedReader( new InputStreamReader(
-                                                  System.in ) );
 
-      System.out.println( in.readLine() );
+      BufferedReader in = new BufferedReader(new InputStreamReader(
+          server.getInputStream()));
+      PrintWriter out = new PrintWriter(server.getOutputStream(), true);
+
+      BufferedReader userIn = new BufferedReader(new InputStreamReader(
+          System.in));
+
+      System.out.println(in.readLine());
       boolean done = false;
       while (!done) {
         String output = userIn.readLine();
-        if ( output.equals(".") ) {
+        if (output.equals(".")) {
           done = true;
         }
         out.println(output);
         String response = in.readLine();
         System.out.println(response);
       }
-      
+
     } // End try on server
     catch (IOException e) {
       System.out.println("Error with socket");
     } finally {
-      if (server != null ) {
-        try { server.close(); }
-        catch (IOException e) { }
+      if (server != null) {
+        try {
+          server.close();
+        } catch (IOException e) {
+        }
       }
     }
 
