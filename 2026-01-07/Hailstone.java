@@ -1,7 +1,6 @@
 public class Hailstone {
 
     public static void main(String[] args) {
-        //int n = Integer.parseInt(args[0]);
         int n = 7;
         
         while (n != 1) {
