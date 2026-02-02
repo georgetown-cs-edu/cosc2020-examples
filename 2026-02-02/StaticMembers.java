@@ -8,12 +8,18 @@ public class StaticMembers {
         count2++;
     }
 
+    public static void incrementByTwo() {
+        count1 += 2;
+    }
+
     public static void printCount1() {
         System.out.println("count1 = " + count1);
         // System.out.println("count2 = " + count2); // ERROR! Why?!
     }
 
     public static void main(String args[]) {
+        StaticMembers.incrementByTwo();
+
         StaticMembers s1 = new StaticMembers();
         StaticMembers s2 = new StaticMembers();
 
