@@ -8,6 +8,10 @@ public class ReservationManager {
     private Vector<RentalSpace> allSpaces;
     private Vector<Reservation> reservations;
 
+    /**
+     * Constructs a new ReservationManager instance.
+     * Initializes the collection of rental spaces and reservations as empty vectors.
+     */
     ReservationManager() {
         allSpaces = new Vector<RentalSpace>();
         reservations = new Vector<Reservation>();
@@ -17,6 +21,16 @@ public class ReservationManager {
         allSpaces.add(space);
     }
 
+    /**
+     * Checks if a rental space has sufficient occupancy availability for the specified date range and number of persons.
+     *
+     * @param space the RentalSpace to check for availability
+     * @param start the start date (inclusive) of the desired reservation
+     * @param end the end date (inclusive) of the desired reservation
+     * @param persons the number of persons requiring accommodation
+     * @return true if the space can accommodate the specified number of persons and has no conflicting reservations
+     *         during the given date range; false otherwise
+     */
     public boolean hasOccupancy(RentalSpace space, LocalDate start, LocalDate end, int persons) {
         if (space.getMaxOccupancy() < persons) {
             return false;
