@@ -3,3 +3,4 @@ Copilot-failure
 stuff.txt
 *.class
 launch.json
+.DS_Store
