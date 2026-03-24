@@ -8,7 +8,7 @@ public class DateClient {
   public static void main(String[] args) {
 
     final String hostname = "localhost";
-    final int port = 30000;
+    final int port = 30001;
     Socket server = null;
 
     try {
@@ -20,7 +20,7 @@ public class DateClient {
       System.out.println(time);
 
     } catch (IOException e) {
-      System.out.println("Error with socket");
+      System.out.println("Error with socket: " + e);
     } finally {
       if (server != null) {
         try {
