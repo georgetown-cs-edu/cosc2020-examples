@@ -14,26 +14,25 @@ public class FunWithThreads {
             while( true ) {
                 System.out.println( "Hello, I'm " + name );
 
-                int waitTime = (int)(500.0 + (500.0 * Math.random()));
-                try {
-                    Thread.sleep( waitTime );
+                 try {
+                    Thread.sleep( 1000 );
                 } catch (InterruptedException e) {
                     e.printStackTrace();
-                }
+                } 
             }
+                
         }
     }
 
     public static void main(String[] args) {
         FunWithThreads fwt = new FunWithThreads();
-        FunWithThreads.HelloItsMe h1 = fwt.new HelloItsMe("Micah");
-        FunWithThreads.HelloItsMe h2 = fwt.new HelloItsMe("Harriet");
 
-        Thread t1 = new Thread(h1);
-        Thread t2 = new Thread(h2);
-
-        t1.start();
-        t2.start();
+        for( int i = 0; i < 20; i++ ) {
+            FunWithThreads.HelloItsMe h = fwt.new HelloItsMe( "" + i );
+            Thread t = new Thread(h);
+            t.start();
+        }
+        
     }
 
 }
