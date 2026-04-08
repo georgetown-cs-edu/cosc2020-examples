@@ -1,9 +1,3 @@
-/**
- * 
- * mvn compile        # compile
- * mvn javafx:run     # compile and run the app
- */
-
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
