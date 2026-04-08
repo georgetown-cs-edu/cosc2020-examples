@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>edu.georgetown.cosc2020</groupId>
-    <artifactId>myapp</artifactId>
+    <artifactId>counter</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -14,7 +14,7 @@
         <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <javafx.version>21.0.3</javafx.version>
-        <main.class>MyApp</main.class>
+        <main.class>Counter</main.class>
     </properties>
 
     <dependencies>
